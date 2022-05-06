@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/claListFragment">
+
+    <fragment
+        android:id="@+id/claListFragment"
+        android:name="edu.uca.ni.movie.fragments.ClaListFragment"
+        android:label="fragment_cla_list"
+        tools:layout="@layout/fragment_cla_list" >
+        <action
+            android:id="@+id/action_claListFragment_to_idiListFragment"
+            app:destination="@id/idiListFragment" />
+        <action
+            android:id="@+id/action_claListFragment_to_claAddFragment"
+            app:destination="@id/claAddFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_claListFragment_to_claUpdateFragment"
+            app:destination="@id/claUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/idiListFragment"
+        android:name="edu.uca.ni.movie.fragments.idiListFragment"
+        android:label="fragment_idi_list"
+        tools:layout="@layout/fragment_idi_list" >
+        <action
+            android:id="@+id/action_idiListFragment_to_claListFragment"
+            app:destination="@id/claListFragment" />
+        <action
+            android:id="@+id/action_idiListFragment_to_idiAddFragment"
+            app:destination="@id/idiAddFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_idiListFragment_to_idiUpdateFragment"
+            app:destination="@id/idiUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/claAddFragment"
+        android:name="edu.uca.ni.movie.fragments.claAddFragment"
+        android:label="fragment_cla_add"
+        tools:layout="@layout/fragment_cla_add" >
+        <action
+            android:id="@+id/action_claAddFragment_to_claListFragment"
+            app:destination="@id/claListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/claUpdateFragment"
+        android:name="edu.uca.ni.movie.fragments.claUpdateFragment"
+        android:label="fragment_cla_update"
+        tools:layout="@layout/fragment_cla_update" >
+        <action
+            android:id="@+id/action_claUpdateFragment_to_claListFragment"
+            app:destination="@id/claListFragment" />
+        <argument
+            android:name="currentClasificationItem"
+            app:argType="edu.uca.ni.movie.model.Clasificacion" />
+    </fragment>
+    <fragment
+        android:id="@+id/idiAddFragment"
+        android:name="edu.uca.ni.movie.fragments.idiAddFragment"
+        android:label="fragment_idi_add"
+        tools:layout="@layout/fragment_idi_add" >
+        <action
+            android:id="@+id/action_idiAddFragment_to_idiListFragment"
+            app:destination="@id/idiListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/idiUpdateFragment"
+        android:name="edu.uca.ni.movie.fragments.idiUpdateFragment"
+        android:label="fragment_idi_update"
+        tools:layout="@layout/fragment_idi_update" >
+        <action
+            android:id="@+id/action_idiUpdateFragment_to_idiListFragment"
+            app:destination="@id/idiListFragment" />
+        <argument
+            android:name="currentIdiomItem"
+            app:argType="edu.uca.ni.movie.model.Idioma" />
+    </fragment>
+</navigation>
